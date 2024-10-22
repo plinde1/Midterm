@@ -52,9 +52,8 @@ var objs = [
   {name: "WA Bluebird Inn", lat:45.99808216, lon:-120.3023529},
   {name: "WI Uptowner", lat:43.06754351, lon:-87.89826393},
   {name: "WV North End Tavern", lat:39.28743124, lon:-81.53301716},
-  {name: "WY Miners & Stockmen's Steakhouse &amp; Spirits", lat:42.32847691, lon:-10},
+  {name: "WY Miners & Stockmen's Steakhouse &amp; Spirits", lat:42.32847691, lon:-104.72588933},
 ]
-
 var wh = [
   {name: "St. Petersburg, FL", lat:27.820306,lon:-82.638745},
   {name: "Tampa, FL", lat:28.063873,lon:-82.504375},
