@@ -158,10 +158,10 @@ marker.addListener ("click", () => {
   document.getElementById("toggle-createWhMarkers").addEventListener("click", createWhMarkers);
 
 function togglecreateObjsMarkers() {
-  heatmap.setMap(createObjsMarkers.getMap() ? null : map);
+  objs.setMap(createObjsMarkers.getMap() ? null : map);
 }
 function togglecreateWhMarkers() {
-  heatmap2.setMap(createWhMarkers.getMap() ? null : map);
+  wh.setMap(createWhMarkers.getMap() ? null : map);
 }
 function getPoints() {
     var points = []
