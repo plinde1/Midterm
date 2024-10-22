@@ -53,7 +53,7 @@ var objs = [
   {name: "WI Uptowner", lat:43.06754351, lon:-87.89826393},
   {name: "WV North End Tavern", lat:39.28743124, lon:-81.53301716},
   {name: "WY Miners & Stockmen's Steakhouse &amp; Spirits", lat:42.32847691, lon:-104.72588933},
-]
+];
 var wh = [
   {name: "St. Petersburg, FL", lat:27.820306,lon:-82.638745},
   {name: "Tampa, FL", lat:28.063873,lon:-82.504375},
@@ -81,10 +81,10 @@ var wh = [
   {name: "South End Charlotte, NC", lat:35.21627,lon:-80.853721},
   {name: "Naperville IL", lat:41.802191,lon:-88.126788},
   {name: "Savannah, GA", lat:32.079353,lon:-81.093526},
-  {name: "Pensacola FL", lat:30.410296,lon:-87.21447},
+  {name: "Pensacola, FL", lat:30.410296,lon:-87.21447},
   {name: "Tempe AZ", lat:33.424522,lon:-111.940409},
   {name: "Arlington VA", lat:38.881743,lon:-77.115393},
-  {name: "Clermont FL", lat:28.53733,lon:-81.735706},
+  {name: "Clermont, FL", lat:28.53733,lon:-81.735706},
   {name: "Milwaukee, WI", lat:43.052945,lon:-87.894542},
   {name: "San Antonio", lat:29.653258,lon:-98.447687},
   {name: "Birmingham", lat:33.501809,lon:-86.797101},
@@ -96,7 +96,7 @@ var wh = [
   {name: "Midtown (Miami FL)", lat:25.807487,lon:-80.193297},
   {name: "KATY  (Katy TX)", lat:29.737709,lon:-95.777577},
   {name: "Ann Arbor MI", lat:42.274905,lon:-83.733003},
-]
+];
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
