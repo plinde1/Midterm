@@ -110,6 +110,10 @@ async function initMap() {
     });
     const infoWindow = new google.maps.InfoWindow();
 
+    const pinBackground = new PinElement({
+      background: "#FBBC04",
+    });
+
     const createObjsMarkers = () => {
       objs.forEach(location => {
     const marker = new google.maps.marker.AdvancedMarkerElement({
@@ -118,6 +122,7 @@ async function initMap() {
             location.name + "<br>" + "Lat:" + location.lat + 
             "<br>" + "Long:" + location.lon,
       position: {lat: location.lat, lng: location.lon},
+      content: pinBackground.element,
       gmpClickable: true,
     });
 
