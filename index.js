@@ -1,7 +1,6 @@
 let map, objMarkers = [], whMarkers = [];
 
 var objs = [  
-  
   {name: "AK B&B Bar", lat:57.78782845, lon:-152.4132228},
   {name: "AL Peerless Saloon", lat:33.65734577, lon:-85.8304739},
   {name: "AR Ohio Club", lat:34.51481581, lon:-93.05411339},
@@ -54,8 +53,9 @@ var objs = [
   {name: "WV North End Tavern", lat:39.28743124, lon:-81.53301716},
   {name: "WY Miners & Stockmen's Steakhouse &amp; Spirits", lat:42.32847691, lon:-104.72588933},
 ];
+
 var wh = [
- {name:"Club Paris",lat:61.21785,lon:-149.89021},
+{name:"Club Paris",lat:61.21785,lon:-149.89021},
 {name:"George's Steak Pit",lat:34.747639,lon:-87.70131},
 {name:"Durant's",lat:33.477198,lon:-112.073547},
 {name:"Nick & Stef's Steakhouse",lat:34.052705,lon:-118.252826},
