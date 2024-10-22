@@ -101,17 +101,57 @@ var wh = [
 ]
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
-    
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
     const myLatlng = { lat: 41.3114, lng: -105.5911  };
-
 
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 4,
       center: myLatlng,
       mapId: "ded0469314e2c640",
     });
+    const infoWindow = new google.maps.InfoWindow();
 
-  heatmap = new google.maps.visualization.HeatmapLayer({
+    const createObjsMarkers = () => {
+      objs.forEach(location => {
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      map: map,
+      title: "Oldest Bars" + "<br>" + "Name:" + 
+            location.name + "<br>" + "Lat:" + location.lat + 
+            "<br>" + "Long:" + location.lon,
+      position: {lat: location.lat, lng: location.lon},
+      gmpClickable: true,
+    });
+
+    marker.addListener ("click", () => {
+      infoWindow.close();
+      infoWindow.setContent(marker.title);
+      infoWindow.open(marker.map, marker);
+    });
+  });
+};
+
+const createWhMarkers = () => {
+  wh.forEach(location => {
+const marker = new google.maps.marker.AdvancedMarkerElement({
+  map: map,
+  title: "World of Beer Store" + "<br>" + "Location:" + 
+        location.name + "<br>" + "Lat:" + location.lat + 
+        "<br>" + "Long:" + location.lon,
+  position: {lat: location.lat, lng: location.lon},
+  gmpClickable: true,
+});
+
+marker.addListener ("click", () => {
+  infoWindow.close();
+  infoWindow.setContent(marker.title);
+  infoWindow.open(marker.map, marker);
+});
+});
+};
+    createObjsMarkers(objs);
+    createWhMarkers(wh);
+
+  var heatmap = new google.maps.visualization.HeatmapLayer({
     data: getPoints(),
     map: map,
   });
@@ -158,3 +198,4 @@ function getPoints2() {
 }
 
 }
+
