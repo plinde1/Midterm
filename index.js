@@ -98,6 +98,7 @@ var wh = [
   {name: "Ann Arbor MI", lat:42.274905,lon:-83.733003},
   
 ]
+
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
@@ -109,10 +110,6 @@ async function initMap() {
       mapId: "ded0469314e2c640",
     });
     const infoWindow = new google.maps.InfoWindow();
-
-    const pinBackground = new PinElement({
-      background: "#FBBC04",
-    });
 
     const createObjsMarkers = () => {
       objs.forEach(location => {
@@ -154,14 +151,36 @@ marker.addListener ("click", () => {
     createObjsMarkers(objs);
     createWhMarkers(wh);
 
-  document.getElementById("toggle-createObjsMarkers").addEventListener("click", createObjsMarkers);
-  document.getElementById("toggle-createWhMarkers").addEventListener("click", createWhMarkers);
+  var heatmap = new google.maps.visualization.HeatmapLayer({
+    data: getPoints(),
+    map: map,
+  });
+  var heatmap2 =  new google.maps.visualization.HeatmapLayer({
+    data: getPoints2(),
+    map: map,
+    gradient: ["rgba(0, 255, 255, 0)",
+    "rgba(0, 255, 255, 1)",
+    "rgba(0, 191, 255, 1)",
+    "rgba(0, 127, 255, 1)",
+    "rgba(0, 63, 255, 1)",
+    "rgba(0, 0, 255, 1)",
+    "rgba(0, 0, 223, 1)",
+    "rgba(0, 0, 191, 1)",
+    "rgba(0, 0, 159, 1)",
+    "rgba(0, 0, 127, 1)",
+    "rgba(63, 0, 91, 1)",
+    "rgba(127, 0, 63, 1)",
+    "rgba(191, 0, 31, 1)",
+    "rgba(255, 0, 0, 1)",]
+  });
+  document.getElementById("toggle-heatmap").addEventListener("click", toggleHeatmap);
+  document.getElementById("toggle-heatmap2").addEventListener("click", toggleHeatmap2);
 
-function togglecreateObjsMarkers() {
-  objs.setMap(createObjsMarkers.getMap() ? null : map);
+function toggleHeatmap() {
+  heatmap.setMap(heatmap.getMap() ? null : map);
 }
-function togglecreateWhMarkers() {
-  wh.setMap(createWhMarkers.getMap() ? null : map);
+function toggleHeatmap2() {
+  heatmap2.setMap(heatmap2.getMap() ? null : map);
 }
 function getPoints() {
     var points = []
