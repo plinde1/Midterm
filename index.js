@@ -138,7 +138,7 @@ const marker = new google.maps.marker.AdvancedMarkerElement({
         location.name + "<br>" + "Lat:" + location.lat + 
         "<br>" + "Long:" + location.lon,
   position: {lat: location.lat, lng: location.lon},
-  gmpClickable: true,
+  gmpClickable: true, 
 });
 
 marker.addListener ("click", () => {
