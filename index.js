@@ -122,7 +122,6 @@ async function initMap() {
             location.name + "<br>" + "Lat:" + location.lat + 
             "<br>" + "Long:" + location.lon,
       position: {lat: location.lat, lng: location.lon},
-      content: pinBackground.element,
       gmpClickable: true,
     });
 
