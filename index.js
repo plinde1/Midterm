@@ -53,7 +53,7 @@ var objs = [
   {name: "WI Uptowner", lat:43.06754351, lon:-87.89826393},
   {name: "WV North End Tavern", lat:39.28743124, lon:-81.53301716},
   {name: "WY Miners & Stockmen's Steakhouse &amp; Spirits", lat:42.32847691, lon:-104.72588933},
-]
+];
 var wh = [
   {name: "St. Petersburg, FL", lat:27.820306,lon:-82.638745},
   {name: "Tampa, FL", lat:28.063873,lon:-82.504375},
@@ -96,8 +96,7 @@ var wh = [
   {name: "Midtown (Miami FL)", lat:25.807487,lon:-80.193297},
   {name: "KATY  (Katy TX)", lat:29.737709,lon:-95.777577},
   {name: "Ann Arbor MI", lat:42.274905,lon:-83.733003},
-  
-]
+];
 
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps");
@@ -160,6 +159,7 @@ function toggleObjsMarkers() {
   objMarkers.forEach(marker => {
     marker.map = marker.map ? null : map;
 });
+}
 
 function toggleWhMarkers() {
   whMarkers.forEach(marker => {
