@@ -122,6 +122,7 @@ async function initMap() {
       center: myLatlng,
       mapId: "ded0469314e2c640",
     });
+
     const infoWindow = new google.maps.InfoWindow();
 
     const createObjsMarkers = () => {
@@ -181,4 +182,3 @@ function toggleWhMarkers() {
 });
 }
 }
-
