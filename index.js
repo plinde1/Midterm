@@ -111,10 +111,18 @@ async function initMap() {
     });
     const infoWindow = new google.maps.InfoWindow();
 
+    const pinView = new google.maps.marker.Pinview({
+      background: '#4285F4',
+      borderColor: '#34A853',
+      scale: 0.5,
+      glyphColor: '#EA4335'
+    })
+
     const createObjsMarkers = () => {
       objs.forEach(location => {
     const marker = new google.maps.marker.AdvancedMarkerElement({
       map: map,
+      content: pinView.element,
       title: "Oldest Bars" + "<br>" + "Name:" + 
             location.name + "<br>" + "Lat:" + location.lat + 
             "<br>" + "Long:" + location.lon,
