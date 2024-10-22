@@ -177,14 +177,14 @@ marker.addListener ("click", () => {
     "rgba(191, 0, 31, 1)",
     "rgba(255, 0, 0, 1)",]
   });
-  document.getElementById("toggle-heatmap").addEventListener("click", toggleHeatmap);
-  document.getElementById("toggle-heatmap2").addEventListener("click", toggleHeatmap2);
+  document.getElementById("toggle-createObjsMarkers").addEventListener("click", createObjsMarkers);
+  document.getElementById("toggle-createWhMarkers").addEventListener("click", createWhMarkers);
 
-function toggleHeatmap() {
-  heatmap.setMap(heatmap.getMap() ? null : map);
+function togglecreateObjsMarkers() {
+  heatmap.setMap(createObjsMarkers.getMap() ? null : map);
 }
-function toggleHeatmap2() {
-  heatmap2.setMap(heatmap2.getMap() ? null : map);
+function togglecreateWhMarkers() {
+  heatmap2.setMap(createWhMarkers.getMap() ? null : map);
 }
 function getPoints() {
     var points = []
