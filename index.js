@@ -1,4 +1,4 @@
-let map, objMarkers = [], whMarkers = [];
+let map, objMarkers = [], whMarkers = [], heatmap;
 
 var objs = [  
   {name: "AK B&B Bar", lat:57.78782845, lon:-152.4132228},
@@ -122,6 +122,7 @@ async function initMap() {
       center: myLatlng,
       mapId: "ded0469314e2c640",
     });
+
     const infoWindow = new google.maps.InfoWindow();
 
     const createObjsMarkers = () => {
@@ -162,6 +163,28 @@ marker.addListener ("click", () => {
 });
 whMarkers.push(marker);
 });
+heatmap = new google.maps.visualization.HeatmapLayer({
+  data: getPoints(),
+  map: map,
+});
+heatmap2 =  new google.maps.visualization.HeatmapLayer({
+  data: getPoints2(),
+  map: map,
+  gradient: ["rgba(0, 255, 255, 0)",
+  "rgba(0, 255, 255, 1)",
+  "rgba(0, 191, 255, 1)",
+  "rgba(0, 127, 255, 1)",
+  "rgba(0, 63, 255, 1)",
+  "rgba(0, 0, 255, 1)",
+  "rgba(0, 0, 223, 1)",
+  "rgba(0, 0, 191, 1)",
+  "rgba(0, 0, 159, 1)",
+  "rgba(0, 0, 127, 1)",
+  "rgba(63, 0, 91, 1)",
+  "rgba(127, 0, 63, 1)",
+  "rgba(191, 0, 31, 1)",
+  "rgba(255, 0, 0, 1)",]
+});
 };
     createObjsMarkers();
     createWhMarkers();
@@ -179,5 +202,19 @@ function toggleWhMarkers() {
   whMarkers.forEach(marker => {
     marker.map = marker.map ? null : map;
 });
+}
+function getPoints() {
+  var points = []
+  for(var i=0; i<objs.length; i++){
+      points.push(new google.maps.LatLng(objs[i].lat, objs[i].lon))
+  }
+return points
+}
+function getPoints2() {
+  var points = []
+  for(var i=0; i<wh.length; i++){
+      points.push(new google.maps.LatLng(wh[i].lat, wh[i].lon))
+  }
+return points
 }
 }
