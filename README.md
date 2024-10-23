@@ -2,5 +2,5 @@
 ## Pierson Linde
 ## Question 8
 
-# Google API URL:
+### Midterm Map URL:
 <https://plinde1.github.io/Midterm/>
